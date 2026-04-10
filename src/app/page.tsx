@@ -1,64 +1,51 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-slate-900 text-white overflow-hidden relative">
+      {/* Background stars / ambient glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-black z-0"></div>
+      
+      {/* Navbar Stub */}
+      <nav className="relative z-20 flex justify-between items-center p-6 lg:px-24">
+        <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
+          UnitedWorldSchool
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="space-x-4">
+          <a href="/admission" className="text-sm font-medium hover:text-teal-400 transition">Admissions</a>
+          <a href="/student" className="text-sm font-medium hover:text-teal-400 transition">Student Login</a>
         </div>
+      </nav>
+
+      {/* Hero Content */}
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
+        
+        {/* Dynamic Globe Animation Placeholder (CSS based) */}
+        <div className="relative w-64 h-64 md:w-96 md:h-96 mb-12 flex items-center justify-center">
+          {/* Globe Core */}
+          <div className="absolute w-full h-full rounded-full bg-gradient-to-tr from-blue-900 to-teal-500 opacity-20 blur-2xl animate-pulse"></div>
+          <div className="absolute w-3/4 h-3/4 rounded-full border border-teal-500/30 animate-[spin_10s_linear_infinite]"></div>
+          <div className="absolute w-3/4 h-3/4 rounded-full border border-blue-500/30 animate-[spin_15s_linear_infinite_reverse]" style={{ transform: 'rotateX(60deg)' }}></div>
+          <div className="absolute w-3/4 h-3/4 rounded-full border border-teal-300/20 animate-[spin_20s_linear_infinite]" style={{ transform: 'rotateY(60deg)' }}></div>
+          
+          {/* Connecting Nodes (Students piling up concept) */}
+          <div className="absolute w-4 h-4 bg-teal-400 rounded-full animate-bounce shadow-[0_0_15px_rgba(45,212,191,0.8)]" style={{ top: '10%', left: '40%' }}></div>
+          <div className="absolute w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(96,165,250,0.8)]" style={{ bottom: '20%', right: '30%' }}></div>
+          <div className="absolute w-5 h-5 bg-indigo-400 rounded-full animate-bounce shadow-[0_0_15px_rgba(129,140,248,0.8)]" style={{ top: '50%', left: '10%', animationDelay: '0.5s' }}></div>
+          
+          <div className="z-10 text-xl font-bold tracking-widest text-teal-100 uppercase drop-shadow-lg">
+            Global Hub
+          </div>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+          The World is Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Classroom</span>
+        </h1>
+        <p className="max-w-2xl text-lg md:text-xl text-slate-400 mb-10">
+          Experience AI-driven elite education, connect with global peers, and learn anywhere for just Rs. 12000/year.
+        </p>
+
+        <a href="/admission" className="px-8 py-4 bg-teal-600 hover:bg-teal-500 text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(13,148,136,0.4)]">
+          Apply for Admission
+        </a>
       </main>
     </div>
   );
